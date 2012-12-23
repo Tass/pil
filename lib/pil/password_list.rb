@@ -4,7 +4,6 @@ class Pil::PasswordList
   attr_reader :passwords
 
   DEFAULT_PASSWORD_FILE = File.expand_path('../../data/passwords.txt', __FILE__)
-    #File.dirname(__FILE__) + "../data/passwords.txt"
 
   # ------------------------------ Instance Methods ------------------------------
 
@@ -22,7 +21,7 @@ class Pil::PasswordList
   end
 
   def exclude?(password)
-    !includes?(password)
+    !include?(password)
   end
 
   private
