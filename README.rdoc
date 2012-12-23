@@ -1,9 +1,35 @@
-= pil
+= PIL: Password Inclusion List
 
-Description goes here.
+Pil is a gem for determining whether or not a given word is amongst the
+10,000 most commonly-used passwords as defined by Mark Burnett's <a
+href="http://xato.net/passwords/more-top-worst-passwords/">10,000 Top
+Passwords</a>.
+
+== Installation
+
+You can let bundler install Inherited Resources by adding this line to your application's Gemfile:
+
+  gem 'inherited_resources'
+
+And then execute:
+
+  bundle install
+
+Or install it yourself with:
+
+  gem install inherited_resources
+
+== Usage
+
+Simply ask Pil whether or not it has a given password in its list. FALSE
+is good, that password isn't a common password; TRUE is bad, the
+password is commonly-used.
+
+  Pil.include?( 'good!password?' )  # => false
+  Pil.include?( 'password' )        # => true
 
 == Contributing to pil
- 
+
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it.
 * Fork the project.
