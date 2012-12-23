@@ -21,12 +21,16 @@ Or install it yourself with:
 
 == Usage
 
-Simply ask Pil whether or not it has a given password in its list. FALSE
-is good, that password isn't a common password; TRUE is bad, the
-password is commonly-used.
+PIL returns FALSE if a given password cannot be found in it's common
+password list; TRUE if the password is found and thus is commonly-used:
 
   Pil.include?( 'good!password?' )  # => false
   Pil.include?( 'password' )        # => true
+
+You can also instantiate PIL:
+
+  pil = Pil.new
+  pil.include?( 'areallylongpasswordwithathreeatheend3' )   # => false
 
 == Contributing to pil
 
