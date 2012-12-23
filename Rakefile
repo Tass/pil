@@ -22,7 +22,9 @@ Jeweler::Tasks.new do |gem|
   gem.description = %Q{Checks a given plaintext password against an inclusion list of common passwords. Returns TRUE if the user's password is in the list; FALSE if it isn't.}
   gem.email = "chriscummer@me.com"
   gem.authors = ["Chris Cummer"]
+
   # dependencies defined in Gemfile
+  gem.files.include 'lib/data/passwords.txt'
 end
 Jeweler::RubygemsDotOrgTasks.new
 

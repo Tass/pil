@@ -3,7 +3,8 @@ class Pil::PasswordList
 
   attr_reader :passwords
 
-  DEFAULT_PASSWORD_FILE = File.dirname(__FILE__) + "/data/passwords.txt"
+  DEFAULT_PASSWORD_FILE = File.expand_path('../../data/passwords.txt', __FILE__)
+    #File.dirname(__FILE__) + "../data/passwords.txt"
 
   # ------------------------------ Instance Methods ------------------------------
 
@@ -30,8 +31,6 @@ class Pil::PasswordList
       return [] if @datafile.nil?
 
       file = File.open(@datafile)
-      f.each_line do |line|
-        @passwords << line.chop
-      end
+      file.each_line { |line| @passwords << line.chop }
     end
 end
