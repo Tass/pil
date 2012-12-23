@@ -1,52 +1,54 @@
-= PIL: Password Inclusion List
+# PIL: Password Inclusion List
 
 PIL is a gem for determining whether or not a given word is amongst the
 10,000 most commonly-used passwords as defined by Mark Burnett's [10,000 Top
 Passwords](http://xato.net/passwords/more-top-worst-passwords/).
 
-== Installation
+## Installation
 
 You can let bundler install PIL by adding this line to your application's Gemfile:
 
-  gem 'pil'
+    gem 'pil'
 
 And then execute:
 
-  bundle install
+    bundle install
 
 Or install it yourself with:
 
-  gem install pil
+    gem install pil
 
-== Usage
+## Usage
 
-=== Password Inclusion
+### Password Inclusion
 
 To determine if the password IS in the common list.
 
 PIL returns FALSE if a given password cannot be found in its common
 password list; TRUE if the password is found and thus is commonly-used:
 
-  Pil.include?( 'good!password?' )  # => false
-  Pil.include?( 'password' )        # => true
+    Pil.include?( 'good!password?' )  # => false
+    Pil.include?( 'password' )        # => true
 
-=== Password Exclusion
+### Password Exclusion
 
 To determine if the password IS NOT in the common list.
 
 PIL returns TRUE if a given password cannot be found its common password
 list; FALSE if the password is found and thus is commonly-used:
 
-  Pil.exclude?( 'good!password?' )  # => true
-  Pil.exclude?( 'password' )        # => false
+    Pil.exclude?( 'good!password?' )  # => true
+    Pil.exclude?( 'password' )        # => false
+
+### Instantiation
 
 You can also instantiate PIL:
 
-  pil = Pil.new
-  pil.include?( 'areallylongpasswordwithathreeatheend3' )   # => false
-  pil.exclude?( 'areallylongpasswordwithathreeatheend3' )   # => true
+    pil = Pil.new
+    pil.include?( 'areallylongpasswordwithathreeatheend3' )   # => false
+    pil.exclude?( 'areallylongpasswordwithathreeatheend3' )   # => true
 
-== Contributing to pil
+## Contributing to pil
 
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it.
@@ -56,7 +58,7 @@ You can also instantiate PIL:
 * Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
 * Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
 
-== Copyright
+## Copyright
 
 Copyright (c) 2012 Chris Cummer. See LICENSE.txt for
 further details.
