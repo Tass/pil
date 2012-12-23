@@ -2,6 +2,7 @@
 
 require 'rubygems'
 require 'bundler'
+
 begin
   Bundler.setup(:default, :development)
 rescue Bundler::BundlerError => e
@@ -17,9 +18,9 @@ Jeweler::Tasks.new do |gem|
   gem.name = "pil"
   gem.homepage = "http://github.com/senorprogrammer/pil"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
-  gem.email = "chris@postal-code.com"
+  gem.summary = %Q{The Password Inclusion List}
+  gem.description = %Q{Checks a given plaintext password against an inclusion list of common passwords. Returns TRUE if the user's password is in the list; FALSE if it isn't.}
+  gem.email = "chriscummer@me.com"
   gem.authors = ["Chris Cummer"]
   # dependencies defined in Gemfile
 end
@@ -30,14 +31,6 @@ Rake::TestTask.new(:test) do |test|
   test.libs << 'lib' << 'test'
   test.pattern = 'test/**/test_*.rb'
   test.verbose = true
-end
-
-require 'rcov/rcovtask'
-Rcov::RcovTask.new do |test|
-  test.libs << 'test'
-  test.pattern = 'test/**/test_*.rb'
-  test.verbose = true
-  test.rcov_opts << '--exclude "gems/*"'
 end
 
 task :default => :test
