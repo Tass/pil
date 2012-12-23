@@ -47,6 +47,22 @@ You can also instantiate PIL:
     pil = Pil.new
     pil.include?( 'areallylongpasswordwithathreeatheend3' )   # => false
     pil.exclude?( 'areallylongpasswordwithathreeatheend3' )   # => true
+    
+## With Rails
+
+In your User model:
+
+    validates_with PasswordInclusionValidator
+
+In /app/validators/ create a new class called PasswordInclusionValidator:
+
+    class PasswordInclusionValidator < ActiveModel::Validator
+      def validate(record)
+        unless Pil.exclude?(record.password)
+          record.errors[:password] << "Password is commonly used. Please choose a different password."
+        end
+      end
+    end
 
 ## Contributing to PIL
 
