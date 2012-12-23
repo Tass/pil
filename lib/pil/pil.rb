@@ -2,7 +2,7 @@ class Pil
   extend Forwardable
 
   def initialize
-    @passwords = PasswordList.new
+    @password_list = PasswordList.new
   end
 
   # ------------------------------ Class Methods ------------------------------
@@ -17,7 +17,7 @@ class Pil
 
   # ------------------------------ Instance Methods ------------------------------
 
-  def_delegator :@passwords, :include?, :include?
-  def_delegator :@passwords, :exclude?, :exclude?
+  def_delegator :@password_list, :include?, :include?
+  def_delegator :@password_list, :exclude?, :exclude?
 end
 
