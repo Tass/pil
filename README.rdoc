@@ -21,16 +21,31 @@ Or install it yourself with:
 
 == Usage
 
-PIL returns FALSE if a given password cannot be found in it's common
+=== Password Inclusion
+
+To determine if the password IS in the common list.
+
+PIL returns FALSE if a given password cannot be found in its common
 password list; TRUE if the password is found and thus is commonly-used:
 
   Pil.include?( 'good!password?' )  # => false
   Pil.include?( 'password' )        # => true
 
+=== Password Exclusion
+
+To determine if the password IS NOT in the common list.
+
+PIL returns TRUE if a given password cannot be found its common password
+list; FALSE if the password is found and thus is commonly-used:
+
+  Pil.exclude?( 'good!password?' )  # => true
+  Pil.exclude?( 'password' )        # => false
+
 You can also instantiate PIL:
 
   pil = Pil.new
   pil.include?( 'areallylongpasswordwithathreeatheend3' )   # => false
+  pil.exclude?( 'areallylongpasswordwithathreeatheend3' )   # => true
 
 == Contributing to pil
 
