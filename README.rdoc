@@ -1,9 +1,8 @@
 = PIL: Password Inclusion List
 
 PIL is a gem for determining whether or not a given word is amongst the
-10,000 most commonly-used passwords as defined by Mark Burnett's <a
-href="http://xato.net/passwords/more-top-worst-passwords/">10,000 Top
-Passwords</a>.
+10,000 most commonly-used passwords as defined by Mark Burnett's [10,000 Top
+Passwords](http://xato.net/passwords/more-top-worst-passwords/).
 
 == Installation
 
