@@ -58,7 +58,7 @@ In /app/validators/ create a new class called PasswordInclusionValidator:
 
     class PasswordInclusionValidator < ActiveModel::Validator
       def validate(record)
-        unless Pil.exclude?(record.password)
+        if Pil.include?(record.password)
           record.errors[:password] << "Password is commonly used. Please choose a different password."
         end
       end
