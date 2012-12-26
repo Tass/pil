@@ -1,3 +1,5 @@
+require 'set'
+
 class Pil::PasswordList
   extend Forwardable
 
@@ -11,7 +13,7 @@ class Pil::PasswordList
 
   def initialize(datafile = DEFAULT_PASSWORD_FILE)
     @datafile = datafile
-    @passwords = []
+    @passwords = Set.new
 
     load_passwords
   end
@@ -27,7 +29,7 @@ class Pil::PasswordList
   private
 
     def load_passwords
-      return [] if @datafile.nil?
+      return Set.new if @datafile.nil?
 
       file = File.open(@datafile)
       file.each_line { |line| @passwords << line.chop }
