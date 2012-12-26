@@ -27,7 +27,7 @@ class Pil::PasswordList
   private
 
     def load_passwords
-      return [] if @datafile.nil?
+      raise "Pil didn't find its file of passwords!" if @datafile.nil?
 
       file = File.open(@datafile)
       file.each_line { |line| @passwords << line.chop }
